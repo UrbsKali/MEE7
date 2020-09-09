@@ -7,7 +7,7 @@ import os
 import platform
 import sys
 import soundfile as sf
-from pretty_help import PrettyHelp
+#from pretty_help import PrettyHelp
 import asyncio
 from async_timeout import timeout
 from functools import partial
@@ -807,9 +807,7 @@ class TextBot(commands.Cog):
 
     """@commands.command()
     async def alfred(self, ctx):
-
         \"""Lui pas argent\"""
-
         embed = discord.Embed(title="Lui pas Argent", description="soyez généreux ! \n https://www.paypal.me/alfreddv",
                               color=0x00ff00)
         embed2 = discord.Embed(title="Vraiment !", description="soyez généreux ! \n https://www.paypal.me/alfreddv",

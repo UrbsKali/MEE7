@@ -1,15 +1,14 @@
-FROM python:3.6
+FROM node:12
 
-WORKDIR /app
+WORKDIR /usr/src/app
 
-RUN apt-get -y update && apt-get install -y ffmpeg
+RUN apt-get update || : && apt-get install python -y
+RUN apt-get install ffmpeg -y
 
+COPY package*.json ./
 
-COPY requirements.txt ./
-
-RUN pip3 install --no-cache-dir -r requirements.txt
-
+RUN npm install
 
 COPY . .
 
-CMD [ "python3", "./bot.py" ]
+CMD [ "node", "index.js" ]

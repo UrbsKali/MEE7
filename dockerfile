@@ -1,6 +1,6 @@
 FROM node:12
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
 RUN apt-get update || : && apt-get install python -y
 RUN apt-get install ffmpeg -y

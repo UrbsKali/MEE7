@@ -8,6 +8,9 @@ module.exports = {
         if (!args[0]) {
             const infos = message.client.commands.filter(x => x.category == 'Infos').map((x) => '`' + x.name + '`').join(', ');
             const music = message.client.commands.filter(x => x.category == 'Music').map((x) => '`' + x.name + '`').join(', ');
+            const others = message.client.commands.filter(x => x.category == 'Others').map((x) => '`' + x.name + '`').join(', ');
+            const mod = message.client.commands.filter(x => x.category == 'Modération').map((x) => '`' + x.name + '`').join(', ');
+            const meme = message.client.commands.filter(x => x.category == 'meme').map((x) => '`' + x.name + '`').join(', ');
 
             message.channel.send({
                 embed: {
@@ -16,8 +19,11 @@ module.exports = {
                     footer: { text: 'This bot is MINE' },
                     fields: [
                         { name: 'Bot', value: infos },
-                        { name: 'Music', value: music },
-                        { name: 'Filters', value: client.filters.map((x) => '`' + x + '`').join(', ') },
+                        { name: 'Autre', value: others },
+                        { name: 'Modération', value: mod },
+                        { name: 'meme', value: meme },
+                        { name: 'Musique', value: music },
+                        { name: 'Flitres', value: client.filters.map((x) => '`' + x + '`').join(', ') },
                     ],
                     timestamp: new Date(),
                     description: `To use filters, ${client.config.discord.prefix}filter (the filter). Example : ${client.config.discord.prefix}filter 8D.`,

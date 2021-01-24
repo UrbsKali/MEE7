@@ -1,7 +1,8 @@
 module.exports = {
 	name: 'clear',
 	description: 'Clear the defined amout of message',
-	execute(message, args) {
+	category: 'Modération',
+	execute(client,message, args) {
 		const amount = parseInt(args[0]) + 1;
 
 		if (isNaN(amount)) {

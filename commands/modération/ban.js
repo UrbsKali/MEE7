@@ -1,8 +1,9 @@
 module.exports = {
 	name: 'ban',
 	description: 'ban a member',
-	args: true,
-    execute(message, args) {
+    args: true,
+    category: 'Modération',
+    execute(client,message, args) {
         // Assuming we mention someone in the message, this will return the user
         // Read more about mentions over at https://discord.js.org/#/docs/main/master/class/MessageMentions
         const user = message.mentions.users.first();

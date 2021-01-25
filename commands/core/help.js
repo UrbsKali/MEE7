@@ -11,6 +11,7 @@ module.exports = {
             const others = message.client.commands.filter(x => x.category == 'Others').map((x) => '`' + x.name + '`').join(', ');
             const mod = message.client.commands.filter(x => x.category == 'Modération').map((x) => '`' + x.name + '`').join(', ');
             const meme = message.client.commands.filter(x => x.category == 'meme').map((x) => '`' + x.name + '`').join(', ');
+            const amus = message.client.commands.filter(x => x.category == 'Among Us').map((x) => '`' + x.name + '`').join(', ');
 
             message.channel.send({
                 embed: {
@@ -22,6 +23,7 @@ module.exports = {
                         { name: 'Autre', value: others },
                         { name: 'Modération', value: mod },
                         { name: 'meme', value: meme },
+                        { name: 'Among Us', value: amus },
                         { name: 'Musique', value: music },
                         { name: 'Flitres', value: client.filters.map((x) => '`' + x + '`').join(', ') },
                     ],

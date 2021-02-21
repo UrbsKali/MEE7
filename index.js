@@ -28,14 +28,6 @@ client.filters = client.config.filters;
 client.commands = new discord.Collection();
 
 
-
-//  commands 
-
-client.api.applications("705398418125881346").guilds('652172028702490652').commands.post({data: {
-    name: '$help',
-    description: 'get the whole help of this bot'
-}})
-
 fs.readdirSync('./commands').forEach(dirs => {
     const commands = fs.readdirSync(`./commands/${dirs}`).filter(files => files.endsWith('.js'));
 

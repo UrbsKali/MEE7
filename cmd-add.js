@@ -3,7 +3,7 @@
 
 
 async function main () {
-    url = "https://discord.com/api/v8/applications/705398418125881346/guilds/652172028702490652/commands"
+    url = "https://discord.com/api/v8/applications/705398418125881346/commands"
     const fetch = require('node-fetch')
 
     const response = await fetch(url, {

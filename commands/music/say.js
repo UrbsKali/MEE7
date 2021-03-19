@@ -15,10 +15,10 @@ module.exports = {
 
 		const { exec } = require('child_process');
 
-		exec(`pico2wave --wave=text2say.wav --lang=fr-FR ${args.join("")}  `, (err, stdout, stderr) => {
+		exec(`pico2wave --wave=text2say.wav --lang=fr-FR "${args.join(" ")}"  `, (err, stdout, stderr) => {
 			if (err) {
 				//some err occurred
-				return message.channel.send(`${client.emotes.error} Some nefarious things append inside me : \n ${err}`)
+				return message.channel.send(`${client.emotes.error} Some nefarious things are inside me : \n ${err}`)
 			}
 		});
 			
@@ -26,8 +26,13 @@ module.exports = {
 		
 		const connection = await message.member.voice.channel.join();
 		connection.play('text2say.wav');
-
-
+		exec(`rm text2say.wav`, (err, stdout, stderr) => {
+			if (err) {
+				//some err occurred
+				return message.channel.send(`${client.emotes.error} Some nefarious things are inside me : \n ${err}`)
+			}
+		});
+		return true
         
 	},
 };
